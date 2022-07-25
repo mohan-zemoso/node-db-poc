@@ -1,14 +1,6 @@
 const Patient = require("../models/patient");
 
 const getPatients = (req, res, next) => {
-  // Patient.findAll()
-  //   .then((patients) => {
-  //     res.send(patients);
-  //   })
-  //   .catch((err) => {
-  //     res.send(err);
-  //   });
-
   req.user
     .getPatients()
     .then((patients) => {
@@ -32,18 +24,6 @@ const getPatient = (req, res, next) => {
 };
 
 const postPatient = (req, res, next) => {
-  // Patient.create({
-  //   name: req.body.name,
-  //   userId: req.user.id,
-  // })
-  //   .then(() => {
-  //     res.send("Patient has been added");
-  //   })
-  //   .catch((err) => {
-  //     res.send(err);
-  //   });
-
-  //The createPatient method automatically sets userId
   req.user
     .createPatient({
       name: req.body.name,
